@@ -2,11 +2,11 @@ import { serverClient } from "@/lib/server/serverClient";
 import { gql } from "@apollo/client";
 import { NextRequest, NextResponse } from "next/server";
 
-const corsHeaders = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST , OPTIONS, GET, PUT, DELETE", 
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
-};
+// const corsHeaders = {
+//     "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Methods": "POST , OPTIONS, GET, PUT, DELETE", 
+//     "Access-Control-Allow-Headers": "Content-Type, Authorization",
+// };
 
 export async function POST(request: NextRequest){
     const {query, variables} = await request.json();
@@ -46,8 +46,6 @@ export async function POST(request: NextRequest){
 
         return NextResponse.json({
             data,
-        },{
-            headers: corsHeaders,
         })
         
 
